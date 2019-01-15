@@ -9,7 +9,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    /**
+     * The default attributes for the user. This will be the one used at signup
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'role' => 'user'
+    ];
     /**
      * The attributes that are mass assignable.
      *
